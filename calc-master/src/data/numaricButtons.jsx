@@ -39,8 +39,8 @@ export default [
       type: "operator",
    },
    {
-      symbol: "^",
-      operation: "Exponentiation",
+      symbol: "√",
+      operation: "Underroot",
       color: "bg-amber-500",
       type: "operator",
    },
