@@ -1,0 +1,23 @@
+.calcy-layout {
+   max-width: 500px;
+   height: 100vh;
+   background-color: #000000;
+   display: grid;
+   place-items: center;
+   padding: 40px;
+   border-radius: 35px;
+}
+.inputNum {
+   width: 26rem;
+   height: 5rem;
+   background-color: #fff;
+   border: none;
+   border-radius: 15px;
+   margin-bottom: 20px;
+   text-align: end;
+   display: grid;
+   place-items: center end;
+   font-size: 3rem;
+   padding-right: 10px;
+   font-weight: 700;
+}

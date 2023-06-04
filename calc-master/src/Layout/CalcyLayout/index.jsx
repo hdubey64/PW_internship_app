@@ -1,10 +1,14 @@
 import React from "react";
 import Button from "src/component/Button";
+import "./calcyLayout.css";
 
 const CalcyLayout = () => {
    return (
-      <div class="rounded-2xl bg-black  min-h-max min-w-max py-10 text-center">
-         <Button />
+      <div className="calcy-layout container">
+         <div>
+            <div className="inputNum">0</div>
+            <Button />
+         </div>
       </div>
    );
 };
