@@ -1,23 +1,30 @@
 .calcy-layout {
-   max-width: 500px;
-   height: 100vh;
+   max-width: 550px;
+   height: 100%;
    background-color: #000000;
    display: grid;
    place-items: center;
-   padding: 40px;
+   padding: 60px 10px;
    border-radius: 35px;
+   display: grid;
+   place-items: center;
 }
 .inputNum {
-   width: 26rem;
-   height: 5rem;
+   width: 30rem;
+   height: 8rem;
    background-color: #fff;
    border: none;
    border-radius: 15px;
-   margin-bottom: 20px;
+   margin-bottom: 50px;
    text-align: end;
    display: grid;
    place-items: center end;
    font-size: 3rem;
    padding-right: 10px;
    font-weight: 700;
+}
+.calcy-main {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 15px;
 }

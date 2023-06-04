@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Button from "src/component/Button";
 import "./calcyLayout.css";
+import { NumaricButton } from "src/data";
 
 function isLastCharacterSymbol(str) {
-   console.log("vgxah", str);
    const lastCharacter = str?.charAt(str.length - 1);
 
    const symbolRegex = /[^\w\s]/; // Matches any non-alphanumeric character except whitespace
@@ -17,9 +17,16 @@ const CalcyLayout = () => {
       if (value?.length <= 0) {
          return alert(" Invalid input");
       }
-      if (value === "Clear") {
-         setInput("");
-      } else if (value === "result") {
+
+      if (value === "C") {
+         return setInput("");
+      }
+      if (value === "⬅") {
+         return setInput(input.slice(0, -1));
+      }
+      if (input.length > 12) {
+         return alert("Length exceed");
+      } else if (value === "=") {
          if (type === "Operator" && value === "√") {
             return Math.sqrt(input);
          }
@@ -29,7 +36,7 @@ const CalcyLayout = () => {
                return alert("Invalid Input");
             }
             const result = eval(input).toString();
-            setInput(result);
+            return setInput(result);
          } catch (error) {
             return alert("invalid input");
          }
@@ -47,10 +54,17 @@ const CalcyLayout = () => {
    };
 
    return (
-      <div className="calcy-layout container">
-         <div>
-            <div className="inputNum">{input}</div>
-            <Button onClick={handleChange} />
+      <div className="calcy-layout">
+         <div className="inputNum">{input}</div>
+         <div className="calcy-main">
+            {NumaricButton.map((item) => (
+               <Button
+                  className="calcy-button"
+                  data={item}
+                  onClick={() => handleChange(item.value, item.type)}
+                  key={item.value}
+               />
+            ))}
          </div>
       </div>
    );

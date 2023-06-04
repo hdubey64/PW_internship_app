@@ -1,11 +1,11 @@
 export default [
-   { number: "C", value: "Clear", color: "symbol", type: "num" },
+   { number: "C", value: "C", color: "symbol", type: "num" },
    {
-      symbol: "√",
-      operation: "Underroot",
+      symbol: "←",
+      operation: "Backspace",
       color: "symbol",
       type: "operator",
-      value: "√",
+      value: "←",
    },
    {
       symbol: "%",
@@ -59,6 +59,6 @@ export default [
       color: "symbol",
       type: "operator",
       width: "40",
-      value: "result",
+      value: "=",
    },
 ];

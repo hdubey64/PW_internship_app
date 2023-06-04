@@ -1,20 +1,23 @@
-import React from "react";
-import { NumaricButton } from "src/data";
 import "./calcyButton.css";
+import PropTypes from "prop-types";
 
-const Button = ({ onClick }) => {
+const Button = ({ onClick, data }) => {
    return (
-      <div className="calcy-main">
-         {NumaricButton.map((element) => (
-            <button
-               className={`calcy-button ${element.color}`}
-               onClick={() => onClick(element.value, element.type)}
-            >
-               {!element.number ? element.symbol : element.number}
-            </button>
-         ))}
-      </div>
+      <button onClick={onClick} className={` calcy-button ${data.color}`}>
+         {data.value}
+      </button>
    );
 };
-
 export default Button;
+
+Button.propTypes = {
+   data: PropTypes.shape({
+      symbol: PropTypes.string,
+      number: PropTypes.string,
+      operation: PropTypes.string.isRequired,
+      color: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      value: PropTypes.string.isRequired,
+   }).isRequired,
+   onClick: PropTypes.func,
+};
