@@ -2,12 +2,15 @@ import React from "react";
 import { NumaricButton } from "src/data";
 import "./calcyButton.css";
 
-const Button = () => {
+const Button = ({ onClick }) => {
    return (
       <div className="calcy-main">
-         {NumaricButton.map((e) => (
-            <button className={`calcy-button ${e.color}`}>
-               {!e.number ? e.symbol : e.number}
+         {NumaricButton.map((element) => (
+            <button
+               className={`calcy-button ${element.color}`}
+               onClick={() => onClick(element.value, element.type)}
+            >
+               {!element.number ? element.symbol : element.number}
             </button>
          ))}
       </div>
