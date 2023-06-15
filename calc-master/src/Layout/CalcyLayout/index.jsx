@@ -21,7 +21,7 @@ const CalcyLayout = () => {
       if (value === "C") {
          return setInput("");
       }
-      if (value === "⬅") {
+      if (value === "←") {
          return setInput(input.slice(0, -1));
       }
       if (input.length > 12) {
